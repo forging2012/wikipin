@@ -6,7 +6,7 @@
 #
 
 default: &default
-  encoding: unicode
+  encoding: utf-8
   username: postgres
   password: password5
   pool: 5
@@ -31,5 +31,14 @@ test:
 
 production:
   adapter: postgis
-  <<: *default
-  database: db/production.sqlite3
+  encoding: unicode
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+  username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
+  host: <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
+  port: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>
+  min_messages: ERROR
+  reconnect: false
+  postgis_extension: postgis                              # default is postgis
+  schema_search_path: public,postgis
+
