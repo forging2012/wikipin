@@ -8,7 +8,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 
 gem 'pg'
-gem 'activerecord-postgis-adapter'
+gem 'activerecord-postgis-adapter', :git => 'https://github.com/nopressurelabs/rgeo-activerecord'
 
 
 # To use ActiveModel has_secure_password
