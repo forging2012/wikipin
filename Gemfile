@@ -6,8 +6,8 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-gem 'sqlite3'
-
+gem 'pg'
+gem 'activerecord-postgis-adapter'
 
 
 # To use ActiveModel has_secure_password
