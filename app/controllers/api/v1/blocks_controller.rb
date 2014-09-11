@@ -6,7 +6,7 @@ class Api::V1::BlocksController < ApplicationController
 
   def show
     ip = request.remote_ip
-    @block = Block.where(:network_start_ip => '::ffff:92.57.108.0')
+    @block = Block.where(:network_start_ip => "::ffff:#{ip}").first
 
     render :json => {"ip"=>"#{ip}", "block" => @block}
   end
