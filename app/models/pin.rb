@@ -4,7 +4,7 @@ class Pin < ActiveRecord::Base
   set_rgeo_factory_for_column(:lonlat, RGeo::Geographic.spherical_factory(:srid => 4326))
 
   def geo_factory
-      self.lonlat = Pin.rgeo_factory_for_column(:latlon, {}).point(self.longitude, self.latitude)
+      self.lonlat = Pin.rgeo_factory_for_column(:latlon).point(self.longitude, self.latitude)
   end
 
   def self.find_near(lon, lat, radius=0.5)

@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/nopressurelabs/activerecord-postgis-adapter
+  revision: dde0d2e06ca52c9bdd33fab967028a01706c96ec
+  branch: master
+  specs:
+    activerecord-postgis-adapter (2.2.0)
+      activerecord (~> 4.0)
+      rgeo-activerecord (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -21,9 +30,6 @@ GEM
       activemodel (= 4.1.4)
       activesupport (= 4.1.4)
       arel (~> 5.0.0)
-    activerecord-postgis-adapter (2.2.0)
-      activerecord (~> 4.0)
-      rgeo-activerecord (~> 1.0)
     activesupport (4.1.4)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -71,7 +77,7 @@ GEM
       activerecord (~> 4.0)
       rgeo (~> 0.3)
     spring (1.1.3)
-    sprockets (2.12.1)
+    sprockets (2.12.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -93,7 +99,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-postgis-adapter
+  activerecord-postgis-adapter!
   pg
   rails (= 4.1.4)
   rails-api

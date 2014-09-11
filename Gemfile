@@ -1,3 +1,4 @@
+#source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
@@ -7,7 +8,11 @@ gem 'rails-api'
 gem 'spring', :group => :development
 
 gem 'pg'
-gem 'activerecord-postgis-adapter'
+gem 'activerecord-postgis-adapter',
+    :git => 'https://github.com/nopressurelabs/activerecord-postgis-adapter',
+    :branch => 'master' do
+        gem 'rgeo-activerecord'
+    end
 
 
 # To use ActiveModel has_secure_password
