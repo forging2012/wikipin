@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a hypermedia API for wikipedia geolocated articles.
 
-Things you may want to cover:
+Once a GET request is sent to the API entry point. IP is geo-located and a path between wikipedia articles is created.
 
-* Ruby version
+Still W-I-P.
 
-* System dependencies
+DB Dumps available at:
 
-* Configuration
+https://www.dropbox.com/sh/pz9qrb33lx1uibr/AACe9WkYWC8iP1zbw89J4hoaa?dl=0
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+File "backup" is full postgres db backup and can be imported.
