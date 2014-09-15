@@ -1,5 +1,5 @@
 source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
-#source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 
@@ -8,6 +8,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 
 gem 'pg'
+
 gem 'rgeo-activerecord',
     :git => 'https://github.com/nopressurelabs/rgeo-activerecord',
     :branch => 'master'
