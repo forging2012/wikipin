@@ -1,5 +1,4 @@
 class Api::V1::BlocksController < ApplicationController
-  include ActionController::MimeResponds
 
   respond_to :json
 
