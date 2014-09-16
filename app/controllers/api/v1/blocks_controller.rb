@@ -1,6 +1,5 @@
 class Api::V1::BlocksController < ApplicationController
   include ActionController::ImplicitRender
-  include ActionController::MimeResponds
 
   respond_to :json
 
@@ -12,6 +11,10 @@ class Api::V1::BlocksController < ApplicationController
     else
       render :json => {:error => {:text => "404 Not found", :status => 404}}
     end
+  end
+
+  def pin_params
+    params.require().permit(:network_start_ip, :geoname_id)
   end
 
 end

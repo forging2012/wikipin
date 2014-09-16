@@ -1,6 +1,6 @@
 class Api::V1::PinsController < ApplicationController
   include ActionController::ImplicitRender
-  include ActionController::MimeResponds
+  
 
   respond_to :json
 
@@ -27,6 +27,12 @@ class Api::V1::PinsController < ApplicationController
         render :json => {:error => {:text => "404 Not found", :status => 404}}
       end
     end
+  end
+
+  private
+
+  def pin_params
+    params.require(:point).permit(:title)
   end
 
 end
