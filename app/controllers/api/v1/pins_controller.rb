@@ -1,6 +1,5 @@
 class Api::V1::PinsController < ApplicationController
-  include ActionController::ImplicitRender
-  
+  include ActionController::MimeResponds
 
   respond_to :json
 
