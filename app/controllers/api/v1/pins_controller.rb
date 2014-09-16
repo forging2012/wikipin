@@ -18,7 +18,11 @@ class Api::V1::PinsController < ApplicationController
       @block = Block.where(:network_start_ip => "::ffff:#{ip.rpartition(".")[0]}.0").first
       if @block
         @pins = Pin.find_near(@block.lon, @block.lat)
-        render :json => @pins, each_serializer: PinSerializer
+        if @pins
+          render :json => @pins, each_serializer: PinSerializer
+        else
+          render :json => {:error => {:text => "404 Not found", :status => 404}}
+        end
       else
         render :json => {:error => {:text => "404 Not found", :status => 404}}
       end
