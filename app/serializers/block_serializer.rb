@@ -11,7 +11,7 @@ class BlockSerializer < ActiveModel::Serializer
   end
 
   def point
-    :lonlat
+    object.lonlat
   end
 
 end

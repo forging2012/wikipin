@@ -2,7 +2,7 @@ class PinSerializer < ActiveModel::Serializer
   attributes :title, :links, :point
 
   def links
-    {:_self => _self, :_url => :url}
+    {:_self => _self, :_url => object.url}
   end
 
   def _self
@@ -11,7 +11,7 @@ class PinSerializer < ActiveModel::Serializer
   end
 
   def point
-    :lonlat
+    object.lonlat.to_json
   end
 
 end
