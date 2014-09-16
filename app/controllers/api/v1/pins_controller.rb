@@ -1,5 +1,4 @@
 class Api::V1::PinsController < ApplicationController
-
   include ActionController::ImplicitRender
   include ActionController::MimeResponds
 
@@ -7,8 +6,11 @@ class Api::V1::PinsController < ApplicationController
 
   def index
     ip = request.remote_ip
-    @block = Block.where(:network_start_ip => "::ffff:#{ip.rpartition(".")[0]}.0").first
-    if @block
+    if params[:point]
+      point = params[:point]
+      @pins = Pin.find_near(point.lon, point.lat)
+      render :json => @pins, each_serializer: PinSerializer
+    elsif @block = Block.where(:network_start_ip => "::ffff:#{ip.rpartition(".")[0]}.0").first
       @pins = Pin.find_near(@block.lon, @block.lat)
       render :json => @pins, each_serializer: PinSerializer
     else
