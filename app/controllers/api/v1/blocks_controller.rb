@@ -1,5 +1,6 @@
 class Api::V1::BlocksController < ApplicationController
   include ActionController::MimeResponds
+  include ActionController::Serialization
 
   respond_to :json
 
