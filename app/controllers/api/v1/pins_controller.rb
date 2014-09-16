@@ -9,7 +9,7 @@ class Api::V1::PinsController < ApplicationController
       point = params[:point].split(',')
       @pins = Pin.find_near(point[0].to_f, point[1].to_f)
       if @pins
-        render :json => @pins, each_serializer: PinSerializer
+        render :json => @pins, each_serializer: PinSerializer, root: "pins"
       else
         render :json => {:error => {:text => "404 Not found", :status => 404}}
       end
@@ -19,7 +19,7 @@ class Api::V1::PinsController < ApplicationController
       if @block
         @pins = Pin.find_near(@block.lon.to_f, @block.lat.to_f)
         if @pins
-          render :json => @pins, each_serializer: PinSerializer
+          render :json => @pins, each_serializer: PinSerializer, root: "pins"
         else
           render :json => {:error => {:text => "404 Not found", :status => 404}}
         end
