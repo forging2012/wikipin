@@ -14,4 +14,8 @@ class Api::V1::BlocksController < ApplicationController
     end
   end
 
+  def pin_params
+    params.require().permit(:network_start_ip, :geoname_id)
+  end
+
 end

@@ -1,8 +1,8 @@
 class BlockSerializer < ActiveModel::Serializer
-  attributes :network_start_ip, :geoname_id, :point
+  attributes :network_start_ip, :geoname_id, :links, :point
 
   def links
-    {:_self => _self, :_graph => _graph}
+    {:_self => _self}
   end
 
   def _self
