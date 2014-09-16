@@ -1,3 +1,17 @@
 class PinSerializer < ActiveModel::Serializer
-  attributes :title, :url, :lonlat
+  attributes :title, :links, :point
+
+  def links
+    {:_self => _self, :_url => :url}
+  end
+
+  def _self
+    href = URI::encode("/api/v1/pins/#{self.id}")
+    {:href => href, :method => "GET", :rel => "_self"}
+  end
+
+  def point
+    self.lonlat
+  end
+
 end
