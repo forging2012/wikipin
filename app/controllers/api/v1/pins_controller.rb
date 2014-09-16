@@ -20,7 +20,7 @@ class Api::V1::PinsController < ApplicationController
         @pins = Pin.find_near(@block.lon.to_f, @block.lat.to_f)
         if @pins
           render :json => @pins, each_serializer: PinSerializer
-        else
+        else.....
           render :json => {:error => {:text => "404 Not found", :status => 404}}
         end
       else
