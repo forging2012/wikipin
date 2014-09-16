@@ -2,7 +2,12 @@ class PinSerializer < ActiveModel::Serializer
   attributes :title, :links, :point
 
   def links
-    {:_self => _self, :_url => object.url}
+    {:_self => _self, :_wiki => wiki_url}
+  end
+
+  def wiki_url
+    href = URI::encode(object.url)
+    {:href => href, :method => "GET", :rel => "_wiki"}
   end
 
   def _self
