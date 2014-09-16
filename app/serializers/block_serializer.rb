@@ -6,7 +6,7 @@ class BlockSerializer < ActiveModel::Serializer
   end
 
   def _self
-    href = URI::encode("/api/v1/blocks/#{self.id}")
+    href = URI::encode("/api/v1/blocks/#{object.id}")
     {:href => href, :method => "GET", :rel => "_self"}
   end
 

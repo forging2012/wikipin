@@ -6,7 +6,7 @@ class PinSerializer < ActiveModel::Serializer
   end
 
   def _self
-    href = URI::encode("/api/v1/pins/#{self.id}")
+    href = URI::encode("/api/v1/pins/#{object.id}")
     {:href => href, :method => "GET", :rel => "_self"}
   end
 

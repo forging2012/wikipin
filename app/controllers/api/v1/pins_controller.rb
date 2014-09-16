@@ -1,5 +1,6 @@
 class Api::V1::PinsController < ApplicationController
   include ActionController::MimeResponds
+  ActionController::Serialization
 
   respond_to :json
 
