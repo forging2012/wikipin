@@ -27,10 +27,4 @@ class Api::V1::PinsController < ApplicationController
     end
   end
 
-  private
-
-  def pin_params
-    params.require(:point).permit(:title)
-  end
-
 end
