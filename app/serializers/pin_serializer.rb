@@ -11,7 +11,7 @@ class PinSerializer < ActiveModel::Serializer
   end
 
   def point
-    self.lonlat
+    :lonlat
   end
 
 end
