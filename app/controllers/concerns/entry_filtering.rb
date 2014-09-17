@@ -1,7 +1,7 @@
 module EntryFiltering
   extend ActiveSupport::Concern
 
-  include do
+  included do
     before_filter :entry_action
   end
 
