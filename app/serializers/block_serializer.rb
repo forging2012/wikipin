@@ -1,13 +1,13 @@
 class BlockSerializer < ActiveModel::Serializer
-  attributes :network_start_ip, :geoname_id, :links, :point
+  attributes :network_start_ip, :geoname_id, :_links, :point
 
-  def links
-    {:_self => _self}
+  def _links
+    {:self => _self}
   end
 
   def _self
     href = URI::encode("/api/v1/blocks/#{object.id}")
-    {:href => href, :method => "GET", :rel => "_self"}
+    {:href => href, :method => "GET", :rel => "self"}
   end
 
   def point
