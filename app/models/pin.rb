@@ -7,6 +7,11 @@ class Pin < ActiveRecord::Base
       self.lonlat = Pin.rgeo_factory_for_column(:latlon).point(self.longitude, self.latitude)
   end
 
+  def reverse_geo
+    self.longitude = self.lonlat.longitude
+    self.latitude = self.lonlat.latitude
+  end
+
   def self.find_near(lon, lat, radius=0.5)
     factory = RGeo::Geographic.spherical_factory
     sw = factory.point(lon+radius, lat+radius)
