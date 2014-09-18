@@ -13,6 +13,8 @@ module EntryFiltering
 
   def pins_by_ip(ip)
     block = Block.where(:network_start_ip => "::ffff:#{ip.rpartition(".")[0]}.0").first
+    print block
+    print ip
     if block
       Pin.find_near(block.lon.to_f, block.lat.to_f)
     end
