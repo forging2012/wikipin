@@ -16,7 +16,7 @@ class PinSerializer < ActiveModel::Serializer
   end
 
   def point
-    object.lonlat.to_json
+    {:latitude => object.lonlat.latitude, :longitude => object.lonlat.longitude}
   end
 
 end
