@@ -1,13 +1,5 @@
-GIT
-  remote: https://github.com/nopressurelabs/rgeo-activerecord
-  revision: e8601d5f61ad6a62c6e85c46775801f15d079791
-  branch: master
-  specs:
-    rgeo-activerecord (1.2.0)
-      activerecord (~> 4.0)
-      rgeo (~> 0.3)
-
 GEM
+  remote: http://mirror1.prod.rhcloud.com/mirror/ruby/
   remote: https://rubygems.org/
   specs:
     actionmailer (4.1.4)
@@ -96,6 +88,15 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+
+GIT
+  remote: https://github.com/nopressurelabs/rgeo-activerecord
+  revision: e8601d5f61ad6a62c6e85c46775801f15d079791
+  branch: master
+  specs:
+    rgeo-activerecord (1.2.0)
+    activerecord (~> 4.0)
+    rgeo (~> 0.3)
 
 PLATFORMS
   ruby
