@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@pins = Pin.where("updated_at <= ?", Date.yesterday).limit(100000)
+@pins = Pin.where("updated_at <= ?", Date.yesterday)
 @pins.each do |pin|
   pin.geo_factory
   pin.save
