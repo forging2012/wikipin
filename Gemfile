@@ -9,12 +9,6 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
-gem 'rgeo-activerecord',
-    :git => 'https://github.com/nopressurelabs/rgeo-activerecord',
-    :branch => 'master'
-
-gem 'activerecord-postgis-adapter'
-
 # Serializer for JSON
 gem 'active_model_serializers'
 
