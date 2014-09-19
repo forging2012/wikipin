@@ -1,4 +1,4 @@
-#source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
+source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
@@ -24,8 +24,8 @@ gem 'active_model_serializers'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+#Use unicorn as the app server
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
