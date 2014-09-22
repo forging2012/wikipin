@@ -1,14 +1,24 @@
 class Api::V1::BlocksController < ApplicationController
+  include FindBlock
 
   respond_to :json
 
   def show
-    ip = request.remote_ip
-    @block = Block.where(:network_start_ip => "::ffff:#{ip.rpartition(".")[0]}.0").first
+    @block = Block.find(params[:id])
     if @block
       render :json => @block, serializer: BlockSerializer, root: "ip_block"
     else
-      render :json => {:error => {:text => "404 Not found", :status => 404}}
+      @error = Error.new(:text => "404 Not found", :status => 404, :url => request.url, :method => request.method)
+      render :json => @error.serializer
+    end
+  end
+
+  def get_block
+    if @block
+      render :json => @block, serializer: BlockSerializer, root: "ip_block"
+    else
+      @error = Error.new(:text => "404 Not found", :status => 404, :url => request.url, :method => request.method)
+      render :json => @error.serializer
     end
   end
 
