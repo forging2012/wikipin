@@ -2,7 +2,7 @@
 
 This is a hypermedia API for wikipedia geolocated articles.
 
-Once a GET request is sent to the API entry point. IP is geo-located and a path between wikipedia articles is created.
+Once a GET request is sent to the API entry point. IP is geo-located and near by wikipedia articles are returned.
 
 Still W-I-P.
 
